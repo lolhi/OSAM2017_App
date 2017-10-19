@@ -27,6 +27,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
     EditText editText_ID;
     EditText editText_PW;
+    String Name;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,8 +56,10 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                         @Override
                         public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {
                             if (statusCode == 201) {
+                                Name = new String(responseBody);
+                                Log.i("NAME",Name);
                                 Intent intent = new Intent(LoginActivity.this, MainActivity.class);
-                                intent.putExtra("writer",editText_ID.getText().toString());
+                                intent.putExtra("writer",Name);
                                 startActivity(intent);
                             } else
                                 Toast.makeText(LoginActivity.this, "아이디 비밀번호를 확인해주세요.", Toast.LENGTH_LONG).show();

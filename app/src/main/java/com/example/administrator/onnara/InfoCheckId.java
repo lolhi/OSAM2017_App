@@ -10,6 +10,11 @@ public class InfoCheckId
         this.key = "2";
     }
 
+    public InfoCheckId(String id, String key) {
+        this.id = id;
+        this.key = key;
+    }
+
     public String getId() {
         return id;
     }

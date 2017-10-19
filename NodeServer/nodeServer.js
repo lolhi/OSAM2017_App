@@ -93,9 +93,10 @@ app.post('/register', function(req, res){
 		sql = 'insert into android_onnara_articles' +
 				'(Title, Writer, Content, SendName)' +
 				'values(?, ?, ?, ?)';
+
 		 args= [body.title, body.writerName, body.content, body.sendName];
 	}
-	console.log(body.title);
+	console.log(sql);
 
 		connection.query(sql, args, function(err, results, fields)
 		{
@@ -134,7 +135,7 @@ app.post('/upload', function(req, res){
 				sql = 'SELECT * FROM andorid_onnara_member WHERE Id = ' + "'" + body.id + "'";
 			else if(body.key == 3)
 				sql = 'SELECT * FROM andorid_onnara_member WHERE Id = ' + "'" + body.ID + "'" + ' AND Password = ' + "'" + body.PW + "'";
-			console.log(sql);
+	
 			connection.query(sql, function(err, rows, fileds){
 			if(err)
 			{
@@ -150,7 +151,7 @@ app.post('/upload', function(req, res){
 			else
 			{
 				console.log("OK");
-				res.sendStatus(201);
+				res.status(201).send(rows[0].Name);
 				res.end();
 			}
 		});
