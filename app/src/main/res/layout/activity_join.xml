@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <EditText
+            android:id="@+id/id_EditText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="29dp"
+            android:layout_marginTop="24dp"
+            android:ems="10"
+            android:hint="ID"
+            android:inputType="textPersonName" />
+
+        <EditText
+            android:id="@+id/pw_EditText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/id_EditText"
+            android:layout_below="@+id/btn_Check"
+            android:layout_marginTop="11dp"
+            android:ems="10"
+            android:hint="PaassWord"
+            android:inputType="textPassword" />
+
+        <EditText
+            android:id="@+id/pw_Confirm_EditText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/pw_EditText"
+            android:layout_below="@+id/pw_EditText"
+            android:layout_marginTop="17dp"
+            android:ems="10"
+            android:hint="Confirm Password"
+            android:inputType="textPassword" />
+
+        <Button
+            android:id="@+id/btn_Check"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignTop="@+id/id_EditText"
+            android:layout_marginEnd="14dp"
+            android:text="중복검사" />
+
+        <TextView
+            android:id="@+id/checkPassword_TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/pw_Confirm_EditText"
+            android:layout_alignStart="@+id/btn_Check"
+            android:layout_marginBottom="11dp"
+            android:layout_marginStart="12dp" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1.5">
+
+        <TextView
+            android:id="@+id/search_unit_TextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="23dp"
+            android:text="부대 검색" />
+
+        <TextView
+            android:id="@+id/unit_name_TextView"
+            android:layout_width="250dp"
+            android:layout_height="50dp"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/search_unit_TextView"
+            android:layout_marginStart="23dp"
+            android:layout_marginTop="18dp"
+            android:textSize="20sp"
+            android:background="@drawable/back" />
+
+        <Button
+            android:id="@+id/search_Btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="검색"
+            android:layout_alignBottom="@+id/unit_name_TextView"
+            android:layout_toEndOf="@+id/unit_name_TextView"
+            android:layout_marginStart="11dp" />
+
+        <EditText
+            android:id="@+id/unitName_EditText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="상세 부대 명"
+            android:inputType="textPersonName"
+            android:layout_centerVertical="true"
+            android:layout_alignStart="@+id/unit_name_TextView" />
+
+        <EditText
+            android:id="@+id/name_EditText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/unitName_EditText"
+            android:layout_below="@+id/unitName_EditText"
+            android:layout_marginTop="22dp"
+            android:ems="10"
+            android:hint="이름"
+            android:inputType="textPersonName" />
+
+        <Button
+            android:id="@+id/joinActvity_join_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:text="가입" />
+
+    </RelativeLayout>
+
+
+</LinearLayout>

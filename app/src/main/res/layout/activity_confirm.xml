@@ -53,11 +53,11 @@
                 android:hint="군번"
                 android:inputType="textPersonName"
                 android:layout_marginBottom="65dp"
-                android:layout_above="@+id/confirm_Pw_EditText"
-                android:layout_alignStart="@+id/confirm_Pw_EditText" />
+                android:layout_above="@+id/pw_Confirm_EditText"
+                android:layout_alignStart="@+id/pw_Confirm_EditText" />
 
             <EditText
-                android:id="@+id/confirm_Pw_EditText"
+                android:id="@+id/pw_Confirm_EditText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:ems="10"
