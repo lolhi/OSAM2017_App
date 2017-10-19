@@ -7,7 +7,7 @@ import com.loopj.android.http.RequestParams;
 public class ProxyUp
 {
     private static AsyncHttpClient client = new AsyncHttpClient();
-    private static String Url = "http://10.53.128.139:5016/";
+    private static String Url = "http://10.53.128.139:5043/";
 
     public static String getUrl() {
         return Url;
