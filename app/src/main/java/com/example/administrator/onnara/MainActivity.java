@@ -57,12 +57,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                             DaoForArticle dao = new DaoForArticle(getApplicationContext());
                             dao.insertJsonData(jsonData);
 
-                            articleList = dao.getArticleList("장용주");
+                            articleList = dao.getArticleList(getIntent().getStringExtra("writer"));
                             Log.i("SQL","start arradapter");
 
                             CustomAdapter arrAdapter = new CustomAdapter(MainActivity.this, R.layout.custom_list_row, articleList);
                             listView_Article.setAdapter(arrAdapter);
-                            articleList = null;
                         }
 
                     }

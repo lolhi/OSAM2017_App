@@ -37,6 +37,7 @@ public class DaoForArticle {
     public void insertJsonData(String jsonData)
     {
         //JSON으로 데이터를 파싱할 때 사용할 임시 변수
+        int id;
         String title;
         String writer;
         String content;
@@ -50,13 +51,14 @@ public class DaoForArticle {
             {
                 JSONObject jObj = jArr.getJSONObject(i);
 
+                id = jObj.getInt("Id");
                 title = jObj.getString("Title");
                 writer  = jObj.getString("Writer");
                 content = jObj.getString("Content");
                 sendName = jObj.getString("SendName");
 
-                String sql = "INSERT INTO Articles (Title, WriterName, Content, SendName)"
-                        + " VALUES('" + title + "', '"+ writer+ "', '"+ content + "', '" + sendName +"');";
+                String sql = "INSERT INTO Articles (ID, Title, WriterName, Content, SendName)"
+                        + " VALUES(" + id + ", '" + title + "', '"+ writer+ "', '"+ content + "', '" + sendName +"');";
                 try
                 {
                     database.execSQL(sql);
@@ -96,8 +98,6 @@ public class DaoForArticle {
             content = cursor.getString(3);
             sendName = cursor.getString(4);
             articleList.add(new Article(title, writer,content, sendName));
-
-            Log.i("SQL","" + i++);
         }
         cursor.close();
         return articleList;
